@@ -1,0 +1,19 @@
+Consider a regression problem where our goal is to penalize large errors more than the standard squared loss L(y, y′) = (y −y′)2. Explain why we can not use the function L(y, y′) = (y − y′)3 to accomplish this goal?
+
+Consider a binary classification problem with y ∈ {−1, 1}. The loss that we would like to use is the classification error function L(y, fθ(x)) = [y ̸= fθ(x)] where y is the true class label and fθ(x) is the predicted class label, but this leads to a non-differentiable optimization problem. Does using the squared loss L(y, fθ(x)) = (y − fθ(x))2 fix this problem?
+
+Consider the objective function shown below for x ∈ R. Find the global minimizers of this function. Show your work and explain briefly each step in your solutions. f(x) = (1/4)x4 − 8x2?
+
+Suppose we are given a data set and are tasked to develop and learn a classification model. We use the data set to implement a standard train-test experiment design. Under what circumstances will the test error yield an unbiased estimate of the expected generalization error?
+
+Consider the function f(x) = √x where x ∈ R≥0. Use the definition of a convex function to prove whether this function is or is not convex?
+
+Let w ∈ RD be a fixed column vector. Consider the set of row vectors defined by S = {x|x ∈ RD, xw ≥ 0}. Use the definition of convexity to prove whether this set is or is not convex?
+
+Explain the primary advantage of linear support vector regression compared to OLS linear regression?
+
+Explain what problem is solved by the use of kernel functions instead of basis expansions when constructing non-linear support vector machines?
+
+Explain the primary advantage of using a neural network instead of a basis expanded linear model when designing a non-linear classification model?
+
+Explain one disadvantage of using a neural network instead of a basis expanded linear model when designing a non-linear classification model?

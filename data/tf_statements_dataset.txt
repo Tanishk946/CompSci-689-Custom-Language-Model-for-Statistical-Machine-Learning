@@ -1,0 +1,50 @@
+Any learning system trained on a finite set of data can overfit that set.	1
+Training neural networks has the potential problem of overfitting the training data.	1
+If we know the Naïve Bayes independence assumptions are false but have lots of data, logistic regression might be preferred.	1
+In a machine learning algorithm, if parameters grow with training data size, it is non‑parametric.	1
+High bias across different training sets can be reduced by increasing model complexity.	1
+Selecting tree splits to maximize information gain doesn’t guarantee optimal trees.	1
+Training error is an optimistic estimator of test error.	1
+Deep neural networks are more prone to overfitting due to their increased complexity.	1
+A logistic regression model is preferred when Naïve Bayes assumptions are false with plenty of data.	1
+Gradient descent minimizes a loss function by iteratively updating model parameters.	1
+A probabilistic model represents uncertainty explicitly with probability distributions.	1
+The normal distribution plays a key role in many statistical learning methods.	1
+Regularization reduces model complexity by penalizing large coefficients.	1
+Cross‑validation estimates out‑of‑sample performance using subsets of training data.	1
+Bayesian inference updates prior beliefs with observed data using Bayes’ rule.	1
+The law of large numbers ensures empirical averages converge to expected values with more data.	1
+A confusion matrix shows counts of true positives, false positives, true negatives, and false negatives.	1
+Receiver Operator Characteristic (ROC) curves plot TPR vs. FPR at different thresholds.	1
+k‑fold cross‑validation splits data into k subsets and cycles through each as validation.	1
+Stochastic gradient descent updates weights using mini‑batches of data instead of full dataset.	1
+Overfitting occurs when model complexity captures noise instead of underlying patterns.	1
+Underfitting happens when the model is too simple to capture the data structure.	1
+L1 regularization encourages sparsity in model weights.	1
+Decision trees can model non‑linear relationships via recursive partitioning.	1
+Ensemble methods like bagging reduce variance by averaging predictions from multiple models.	1
+If we train linear regression with only half the data, bias will be smaller.	0
+Deep stacking in neural networks always reduces the risk of overfitting.	0
+Gradient descent always finds the global minimum regardless of the loss surface.	0
+A non‑parametric model has a fixed number of parameters.	0
+High bias indicates a model is capturing too much noise.	0
+Bagging increases model variance to improve fit.	0
+Decision trees always produce optimal splits using information gain.	0
+Training error equals test error for any model.	0
+Disabling regularization always reduces generalization error.	0
+A larger training set always reduces both bias and variance uniformly.	0
+k‑fold cross‑validation never overestimates test performance.	0
+L2 regularization encourages sparsity in model parameters.	0
+Naïve Bayes always outperforms logistic regression on large datasets.	0
+A model that can perfectly classify the training data always generalizes well.	0
+Increasing learning rate always speeds up convergence safely.	0
+More hidden layers always improve neural network generalization.	0
+A confusion matrix shows ROC scores.	0
+Ensemble methods increase model interpretability.	0
+Stochastic gradient descent computes gradients on the full dataset every step.	0
+Regularization always improves training accuracy.	0
+A decision tree with deeper depth always generalizes better.	0
+High bias and high variance occur when model is both too simple and too complex.	0
+Cross‑validation and test error are always identical.	0
+Bayesian inference doesn’t use prior distributions.	0
+Ensemble methods typically increase model variance.	0
