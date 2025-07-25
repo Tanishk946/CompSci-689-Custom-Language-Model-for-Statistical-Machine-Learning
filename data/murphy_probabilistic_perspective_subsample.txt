@@ -1,0 +1,105 @@
+In some cases, we are not interested in interpreting the graph structure, we just want to
+use it to model correlations and to make predictions. One example of this is in ﬁnancial
+portfolio management, where accurate models of the covariance between large numbers of
+different stocks is important. Carvalho and West (2007) show that by learning a sparse graph,
+and then using this as the basis of a trading strategy, it is possible to outperform (i.e., make
+more money than) methods that do not exploit sparse graphs. Another example is predicting
+traffic jams on the freeway. Horvitz et al. (2005) describe a deployed system called JamBayes
+for predicting traffic ﬂow in the Seattle area; predictions are made using a graphical model
+whose structure was learned from data.
+
+
+1.3.4 Matrix completion
+
+Sometimes we have missing data, that is, variables whose values are unknown. For example, we
+might have conducted a survey, and some people might not have answered certain questions.
+Or we might have various sensors, some of which fail. The corresponding design matrix will
+then have “holes” in it; these missing entries are often represented by NaN, which stands for
+“not a number”. The goal of imputation is to infer plausible values for the missing entries. This
+is sometimes called matrix completion. Below we give some example applications.
+
+1.3.4.1
+
+Image inpainting
+
+An interesting example of an imputation-like task is known as image inpainting. The goal is
+to “ﬁll in” holes (e.g., due to scratches or occlusions) in an image with realistic texture. This is
+illustrated in Figure 1.12, where we denoise the image, as well as impute the pixels hidden behind
+the occlusion. This can be tackled by building a joint probability model of the pixels, given a
+set of clean images, and then inferring the unknown variables (pixels) given the known variables
+(pixels). This is somewhat like masket basket analysis, except the data is real-valued and spatially
+structured, so the kinds of probability models we use are quite different. See Sections 19.6.2.7
+and 13.8.4 for some possible choices.
+
+1.3.4.2
+
+Collaborative ﬁltering
+
+Another interesting example of an imputation-like task is known as collaborative ﬁltering. A
+common example of this concerns predicting which movies people will want to watch based
+on how they, and other people, have rated movies which they have already seen. The key idea
+is that the prediction is not based on features of the movie or user (although it could be), but
+merely on a ratings matrix. More precisely, we have a matrix X where X(m, u) is the rating
+
+(say an integer between 1 and 5, where 1 is dislike and 5 is like) by user u of movie m. Note
+that most of the entries in X will be missing or unknown, since most users will not have rated
+most movies. Hence we only observe a tiny subset of the X matrix, and we want to predict
+In particular, for any given user u, we might want to predict which of the
+a different subset.
+unrated movies he/she is most likely to want to watch.
+
+In order to encourage research in this area, the DVD rental company Netﬂix created a com-
+launched in 2006, with a $1M USD prize (see http://netflixprize.com/).
+petition,
+In
+particular, they provided a large matrix of ratings, on a scale of 1 to 5, for ∼ 18k movies
+created by ∼ 500k users. The full matrix would have ∼ 9 × 109 entries, but only about 1%
+of the entries are observed, so the matrix is extremely sparse. A subset of these are used for
+training, and the rest for testing, as shown in Figure 1.13. The goal of the competition was to
+predict more accurately than Netﬂix’s existing system. On 21 September 2009, the prize was
+awarded to a team of researchers known as “BellKor’s Pragmatic Chaos”. Section 27.6.2 discusses
+some of their methodology. Further details on the teams and their methods can be found at
+http://www.netflixprize.com/community/viewtopic.php?id=1537.
+
+1.3.4.3 Market basket analysis
+
+In commercial data mining, there is much interest in a task called market basket analysis. The
+data consists of a (typically very large but sparse) binary matrix, where each column represents
+an item or product, and each row represents a transaction. We set xij = 1 if item j was
+purchased on the i’th transaction. Many items are purchased together (e.g., bread and butter),
+so there will be correlations amongst the bits. Given a new partially observed bit vector,
+representing a subset of items that the consumer has bought, the goal is to predict which other
+bits are likely to turn on, representing other items the consumer might be likely to buy. (Unlike
+collaborative ﬁltering, we often assume there is no missing data in the training data, since we
+know the past shopping behavior of each customer.)
+
+This task arises in other domains besides modeling purchasing patterns. For example, similar
+techniques can be used to model dependencies between ﬁles in complex software systems. In
+this case, the task is to predict, given a subset of ﬁles that have been changed, which other ones
+need to be updated to ensure consistency (see e.g., (Hu et al. 2010)).
+
+It is common to solve such tasks using frequent itemset mining, which create association
+rules (see e.g., (Hastie et al. 2009, sec 14.2) for details). Alternatively, we can adopt a probabilistic
+approach, and ﬁt a joint density model p(x1, . . . , xD) to the bit vectors, see e.g., (Hu et al.
+
+(a) Illustration of a K-nearest neighbors classiﬁer in 2d for K = 3. The 3 nearest neighbors
+Figure 1.14
+of test point x1 have labels 1, 1 and 0, so we predict p(y = 1|x1, D, K = 3) = 2/3. The 3 nearest
+neighbors of test point x2 have labels 0, 0, and 0, so we predict p(y = 1|x2, D, K = 3) = 0/3.
+(b)
+Illustration of the Voronoi tesselation induced by 1-NN. Based on Figure 4.13 of (Duda et al. 2001). Figure
+generated by knnVoronoi.
+
+2010). Such models often have better predictive acccuracy than association rules, although they
+may be less interpretible. This is typical of the difference between data mining and machine
+learning: in data mining, there is more emphasis on interpretable models, whereas in machine
+learning, there is more emphasis on accurate models.
+
+1.4
+
+Some basic concepts in machine learning
+
+In this Section, we provide an introduction to some key ideas in machine learning. We will
+expand on these concepts later in the book, but we introduce them brieﬂy here, to give a ﬂavor
+of things to come.
+
